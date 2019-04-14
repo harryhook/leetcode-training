@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Add Two Numbers/Add Two Numbers.iml" filepath="$PROJECT_DIR$/Add Two Numbers/Add Two Numbers.iml" />
       <module fileurl="file://$PROJECT_DIR$/Two Sum/Two Sum.iml" filepath="$PROJECT_DIR$/Two Sum/Two Sum.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/leetcode-training.iml" filepath="$PROJECT_DIR$/.idea/leetcode-training.iml" />
+      <module fileurl="file://$PROJECT_DIR$//longest-substring-without-repeating-characters/longest-substring-without-repeating-characters.iml" filepath="$PROJECT_DIR$//longest-substring-without-repeating-characters/longest-substring-without-repeating-characters.iml" />
     </modules>
   </component>
 </project>
