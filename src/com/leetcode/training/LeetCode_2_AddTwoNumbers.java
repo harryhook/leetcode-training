@@ -3,21 +3,8 @@ package com.leetcode.training;
 
 /**
  * @author chenhaowei
- * @date 2019.03.19
  */
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}
-
-/**
- * @author chenhaowei
- */
-public class AddTwoNumbers {
+public class LeetCode_2_AddTwoNumbers {
     public static void main(String[] args) {
         ListNode head1 = getListOne(new ListNode(1));
         ListNode head2 = getListTwo(new ListNode(2));

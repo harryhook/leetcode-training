@@ -1,15 +1,13 @@
 package com.leetcode.training;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 /**
  * @author chenhaowei
  * @date 2019.03.19
  */
-public class LongestSubstring {
+public class LeetCode_3_LongestSubstring {
     public int lengthOfLongestSubstring(String s) {
         int res = 0;
 

@@ -1,7 +1,4 @@
-package training;
-
-import java.util.HashSet;
-import java.util.Set;
+package com.leetcode.training;
 
 /**
  * @author chenhaowei
@@ -9,16 +6,8 @@ import java.util.Set;
  */
 
 
-class ListNode {
-    int val;
-    ListNode next;
 
-    ListNode(int x) {
-        val = x;
-    }
-}
-
-public class MergeTwoSortedLists {
+public class LeetCode_21_MergeTwoSortedLists {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummyHead = new ListNode(-1);
         ListNode curr = dummyHead, p = l1, q = l2;
