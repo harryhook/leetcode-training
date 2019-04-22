@@ -28,7 +28,7 @@ class Solution {
         ListNode dummyHead = new ListNode(-1);
         dummyHead.next = head;
         ListNode cur = dummyHead;
-        while (cur.next != null || cur.next.next != null) {
+        while (cur.next != null && cur.next.next != null) {
             ListNode first = cur.next;
             ListNode second = first.next;
             first.next = second.next;
