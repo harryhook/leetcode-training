@@ -12,6 +12,10 @@ public class LeetCode_1_TwoSum {
         int[] nums = {2, 3, 5, 4, 7};
         int target = 6;
         int[] res = twoSum(nums, target);
+        for (int i = 0; i<res.length; i++) {
+            System.out.printf(res[i] + " ");
+        }
+        System.out.printf("\n");
         
     }
 
