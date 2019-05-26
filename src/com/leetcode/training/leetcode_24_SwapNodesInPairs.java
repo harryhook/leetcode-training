@@ -1,13 +1,6 @@
+package com.leetcode.training;
 
-
-public class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}
+import com.leetcode.training.ListNode;
 
 class Solution {
     public ListNode swapPairs(ListNode head) {
