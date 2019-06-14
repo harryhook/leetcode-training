@@ -53,8 +53,6 @@ public class LeetCode_23_Merge_k_Sorted_Lists {
         ListNode[] lists = new ListNode[]{node1, node2, node3};
 
         mergeKLists(lists);
-
-
     }
 
 }
