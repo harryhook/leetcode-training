@@ -1,7 +1,5 @@
 package com.leetcode.training;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
