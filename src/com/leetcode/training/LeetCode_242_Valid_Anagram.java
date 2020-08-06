@@ -10,6 +10,8 @@ public class LeetCode_242_Valid_Anagram {
         LeetCode_242_Valid_Anagram client = new LeetCode_242_Valid_Anagram();
 
         client.isAnagram("a", "b");
+
+
     }
 
     public boolean isAnagram(String s, String t) {
@@ -34,4 +36,8 @@ public class LeetCode_242_Valid_Anagram {
 
         return true;
     }
+
+
+
+
 }
