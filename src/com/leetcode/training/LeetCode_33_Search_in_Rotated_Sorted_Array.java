@@ -26,6 +26,37 @@ public class LeetCode_33_Search_in_Rotated_Sorted_Array {
 
     }
 
+    public int search1(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        if (nums.length == 1) return target == nums[0] ? 0 : -1;
+
+        int low = 0, high = nums.length - 1;
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            if (nums[mid] > nums[high]) {
+                low = mid + 1;
+            } else {
+                high = mid;
+            }
+        }
+        int rotate = low;
+        low = 0;
+        high = nums.length - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            int realMid = (mid + rotate) % nums.length;
+            if (nums[realMid] == target) return realMid;
+            if (nums[realMid] > target) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return -1;
+    }
+
     private int binarySearch(int[] nums, int start, int end, int target) {
         int left = start;
         int right = end;
