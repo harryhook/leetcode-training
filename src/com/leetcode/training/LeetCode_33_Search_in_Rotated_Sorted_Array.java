@@ -45,7 +45,7 @@ public class LeetCode_33_Search_in_Rotated_Sorted_Array {
         low = 0;
         high = nums.length - 1;
         while (low <= high) {
-            int mid = low + (high - low) / 2;
+             int mid = low + (high - low) / 2;
             int realMid = (mid + rotate) % nums.length;
             if (nums[realMid] == target) return realMid;
             if (nums[realMid] > target) {
