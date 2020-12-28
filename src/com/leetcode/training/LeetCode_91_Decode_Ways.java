@@ -44,8 +44,8 @@ public class LeetCode_91_Decode_Ways {
         dp[1] =1;
 
         for(int i=1; i<n; i++) {
-            int cur =  Integer.valueOf(s.substring(i, i+1));
-            int pre = Integer.valueOf(s.substring(i-1, i));
+            int cur =  s.charAt(i);
+            int pre = s.charAt(i-1);
 
             if(cur==0 && ( pre==0 || pre*10+cur>26)) {
                 return 0;
