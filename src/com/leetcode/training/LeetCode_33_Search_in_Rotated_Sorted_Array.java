@@ -3,11 +3,11 @@ package com.leetcode.training;
 public class LeetCode_33_Search_in_Rotated_Sorted_Array {
     public static void main(String[] args) {
 
-        int[] nums = {8,9,2,3,4};
+        int[] nums = {8, 9, 0, 2, 3, 4};
 
         LeetCode_33_Search_in_Rotated_Sorted_Array client = new LeetCode_33_Search_in_Rotated_Sorted_Array();
 
-        System.out.println(client.search(nums, 9));
+        System.out.println(client.search1(nums, 4));
     }
 
     public int search(int[] nums, int target) {
@@ -24,6 +24,34 @@ public class LeetCode_33_Search_in_Rotated_Sorted_Array {
             return binarySearch(nums, peakIndex + 1, nums.length - 1, target);
         }
 
+    }
+
+    public int search1(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        if (nums.length == 1) return target == nums[0] ? 0 : -1;
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) return mid;
+
+            if (nums[mid] >= nums[left]) {
+                if (target >= nums[left] && target <= nums[mid]) {
+                    right = mid;
+                } else {
+                    left = mid;
+                }
+            } else if (nums[mid] <= nums[right]) {
+                if (target >= nums[mid] && target <= nums[right]) {
+                    left = mid;
+                } else {
+                    right = mid;
+                }
+            }
+        }
+        return -1;
     }
 
     private int binarySearch(int[] nums, int start, int end, int target) {
