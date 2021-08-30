@@ -9,6 +9,12 @@ import java.util.Map;
  */
 public class LeetCode_1_TwoSum {
     public static void main(String[] args) {
+
+        int one = 1;
+        int on1 = 2;
+        int on3 = 2;
+
+        System.out.println(on1 ^ one ^ on3);
         int[] nums = {2, 3, 5, 4, 7};
         int target = 6;
         int[] res = twoSum(nums, target);
