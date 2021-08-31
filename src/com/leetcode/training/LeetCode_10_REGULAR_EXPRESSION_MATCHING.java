@@ -3,8 +3,11 @@ package com.leetcode.training;
 public class LeetCode_10_REGULAR_EXPRESSION_MATCHING {
 
     public static void main(String[] args) {
+        LeetCode_10_REGULAR_EXPRESSION_MATCHING client = new LeetCode_10_REGULAR_EXPRESSION_MATCHING();
 
+        System.out.println(client.isMatch("aaa",    "aaaab*a*c*a"));
     }
+
 
     public boolean isMatch(String s, String p) {
 
@@ -14,7 +17,7 @@ public class LeetCode_10_REGULAR_EXPRESSION_MATCHING {
         dp[0][0] = true;
         // a*, a*b. a*b*c
         for (int i = 1; i < dp[0].length; i++) {
-            if (p.charAt(i) == '*') {
+            if (p.charAt(i - 1) == '*') {
                 dp[0][i] = dp[0][i - 2];
             }
         }
@@ -24,14 +27,14 @@ public class LeetCode_10_REGULAR_EXPRESSION_MATCHING {
 
                 if (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '.') {
                     dp[i][j] = dp[i - 1][j - 1];
-                } else if (p.charAt(j) == '*') {
+                } else if (p.charAt(j-1) == '*') {
                     dp[i][j] = dp[i][j - 2];
 
-                    if (s.charAt(i) == p.charAt(j - 1) || p.charAt(j - 1) == '.') {
+                    if (s.charAt(i - 1) == p.charAt(j - 2) || p.charAt(j - 2) == '.') {
                         dp[i][j] = dp[i - 1][j];
                     }
                 } else {
-                    return false;
+                    dp[i][j]  = false;
                 }
             }
         }
