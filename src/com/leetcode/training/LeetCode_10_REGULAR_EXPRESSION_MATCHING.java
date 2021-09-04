@@ -5,7 +5,7 @@ public class LeetCode_10_REGULAR_EXPRESSION_MATCHING {
     public static void main(String[] args) {
         LeetCode_10_REGULAR_EXPRESSION_MATCHING client = new LeetCode_10_REGULAR_EXPRESSION_MATCHING();
 
-        System.out.println(client.isMatch("aaa",    "aaaab*a*c*a"));
+        System.out.println(client.isMatch("aaa", "ab*a*c*a"));
     }
 
 
@@ -27,14 +27,14 @@ public class LeetCode_10_REGULAR_EXPRESSION_MATCHING {
 
                 if (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '.') {
                     dp[i][j] = dp[i - 1][j - 1];
-                } else if (p.charAt(j-1) == '*') {
+                } else if (p.charAt(j - 1) == '*') {
                     dp[i][j] = dp[i][j - 2];
 
                     if (s.charAt(i - 1) == p.charAt(j - 2) || p.charAt(j - 2) == '.') {
-                        dp[i][j] = dp[i - 1][j];
+                        dp[i][j] = dp[i][j] | dp[i - 1][j];
                     }
                 } else {
-                    dp[i][j]  = false;
+                    dp[i][j] = false;
                 }
             }
         }
