@@ -24,7 +24,6 @@ public class LeetCode_199_Binary_Tree_Right_Side_View {
     }
 
 
-}
 
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> res = new ArrayList<>();
