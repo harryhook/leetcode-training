@@ -25,7 +25,6 @@ public class LeetCode_239_Sliding_Window_Maximum {
         int n = nums.length;
 
         int[] res = new int[n - k + 1];
-        int resIdx = 0;
         Deque<Integer> queue = new LinkedList<>();
         for (int i = 0; i < n; i++) {
 
