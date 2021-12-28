@@ -1,6 +1,8 @@
 package com.leetcode.training;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class LeetCode_300_Longest_Increasing_Subsequence {
 
@@ -8,7 +10,7 @@ public class LeetCode_300_Longest_Increasing_Subsequence {
     public static void main(String[] args) {
         LeetCode_300_Longest_Increasing_Subsequence client = new LeetCode_300_Longest_Increasing_Subsequence();
 
-        int cnt = client.lengthOfLIS(new int[]{1, 3, 6, 7, 9, 4, 10, 5, 6});
+        int cnt = client.lengthOfLIS2(new int[]{1, 3, 6, 7, 9, 4, 10, 5, 6});
 
         System.out.println(cnt);
     }
@@ -30,5 +32,35 @@ public class LeetCode_300_Longest_Increasing_Subsequence {
 
         }
         return res;
+    }
+
+    public int lengthOfLIS2(int[] nums) {
+
+        if (nums.length == 1) return 1;
+
+        List<Integer> res = new ArrayList<>();
+
+        res.add(nums[0]);
+
+        for (int i = 1; i < nums.length; i++) {
+
+            if (res.get(res.size() - 1) < nums[i]) {
+                res.add(nums[i]);
+            } else {
+
+                int low = 0, high = res.size()-1;
+
+                while(low <= high) {
+                    int mid = low + (high-low)/2;
+                    if(res.get(mid) < nums[i]) {
+                        low = mid +1;
+                    } else {
+                        high = mid -1;
+                    }
+                }
+                res.set(low, nums[i]);
+            }
+        }
+        return res.size();
     }
 }
