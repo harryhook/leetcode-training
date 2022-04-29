@@ -1,5 +1,8 @@
 package com.leetcode.training;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LeetCode_33_Search_in_Rotated_Sorted_Array {
     public static void main(String[] args) {
 
@@ -7,7 +10,7 @@ public class LeetCode_33_Search_in_Rotated_Sorted_Array {
 
         LeetCode_33_Search_in_Rotated_Sorted_Array client = new LeetCode_33_Search_in_Rotated_Sorted_Array();
 
-        System.out.println(client.search1(nums, 4));
+        System.out.println(client.allResult(new int[]{1, 2, 3}));
     }
 
     public int search(int[] nums, int target) {
@@ -89,5 +92,26 @@ public class LeetCode_33_Search_in_Rotated_Sorted_Array {
         }
 
         return 0;
+    }
+
+    private List<List<Integer>> allResult(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        helper(res, new ArrayList<>(), nums);
+        return res;
+    }
+
+    private void helper(List<List<Integer>> res, ArrayList<Integer> temp, int[] nums) {
+        if (temp.size() == nums.length) {
+            res.add(new ArrayList<>(temp));
+        } else {
+            for (int i = 0; i < nums.length; i++) {
+                if(temp.contains(nums[i])) continue;
+                temp.add(nums[i]);
+                helper(res, temp, nums);
+                temp.remove(temp.size() - 1);
+            }
+        }
+
+
     }
 }
