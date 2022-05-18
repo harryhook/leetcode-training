@@ -8,6 +8,7 @@ public class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
+    TreeNode parent;
 
     TreeNode(int x) {
         val = x;
@@ -35,5 +36,13 @@ public class TreeNode {
 
     public void setRight(TreeNode right) {
         this.right = right;
+    }
+
+    public TreeNode getParent() {
+        return parent;
+    }
+
+    public void setParent(TreeNode parent) {
+        this.parent = parent;
     }
 }
