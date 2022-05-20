@@ -8,22 +8,26 @@ package com.leetcode.training.binarysearch;
 public class LeetCode_154_Find_Minimum_in_Rotated_Sorted_Array_II {
 
     public int findMin(int[] nums) {
-        int length = nums.length;
-        int low = -1, high = length-1;
-        int lastVal = nums[length-1];
-        while(low + 1 != high) {
+
+        int low = 0, high = nums.length-1;
+
+        while(low < high) {
             int mid = low + (high -low) /2;
-            if(nums[mid] <= lastVal) {
+            // 最小数肯定在左半区， low=mid+1
+            if(nums[mid] > nums[high]) {
+                low = mid + 1;
+            // 最小数肯定在右半区
+            } else if(nums[mid] < nums[high]){
                 high = mid;
-            } else{
-                low = mid;
+            } else {
+                high--;
             }
         }
-        return nums[high];
+        return nums[low];
     }
 
     public static void main(String[] args) {
         LeetCode_154_Find_Minimum_in_Rotated_Sorted_Array_II client = new LeetCode_154_Find_Minimum_in_Rotated_Sorted_Array_II();
-        System.out.println(client.findMin(new int[]{3,1,3}));
+        System.out.println(client.findMin(new int[]{1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1}));
     }
 }
