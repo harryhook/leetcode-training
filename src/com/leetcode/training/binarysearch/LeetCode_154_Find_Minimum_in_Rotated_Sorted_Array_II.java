@@ -21,4 +21,9 @@ public class LeetCode_154_Find_Minimum_in_Rotated_Sorted_Array_II {
         }
         return nums[high];
     }
+
+    public static void main(String[] args) {
+        LeetCode_154_Find_Minimum_in_Rotated_Sorted_Array_II client = new LeetCode_154_Find_Minimum_in_Rotated_Sorted_Array_II();
+        System.out.println(client.findMin(new int[]{3,1,3}));
+    }
 }
