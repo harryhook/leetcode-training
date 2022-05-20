@@ -6,11 +6,52 @@ import java.util.List;
 public class LeetCode_33_Search_in_Rotated_Sorted_Array {
     public static void main(String[] args) {
 
-        int[] nums = {8, 9, 0, 2, 3, 4};
+        int[] nums = {3,1};
 
         LeetCode_33_Search_in_Rotated_Sorted_Array client = new LeetCode_33_Search_in_Rotated_Sorted_Array();
 
-        System.out.println(client.allResult(new int[]{1, 2, 3}));
+        System.out.println(client.search2(nums,3));
+    }
+
+    /**
+     * 注意target 落在哪个区间，及时更新 low， high， 两段分别比较？
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int search2(int[] nums, int target) {
+        int length = nums.length;
+        int rotatedIndex = -1;
+        for(int i = 0 ; i<length; i++) {
+            if(nums[i] > nums[i+1]) {
+                rotatedIndex = i;
+                break;
+            }
+        }
+        int low, high;
+        if(rotatedIndex == -1) {
+            low = -1;
+            high = length;
+        } else {
+            if(target < nums[0]) {
+                low = rotatedIndex;
+                high = length;
+            } else {
+                low = -1;
+                high = rotatedIndex+1;
+            }
+        }
+        while(low + 1 != high) {
+            int mid = low + (high -low) /2;
+            if(nums[mid] == target) return mid;
+            if(target < nums[mid]) {
+                high = mid;
+            } else {
+                low = mid;
+            }
+        }
+        return -1;
     }
 
     public int search(int[] nums, int target) {
