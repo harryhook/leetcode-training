@@ -1,4 +1,4 @@
-package com.leetcode.training;
+package com.leetcode.training.binarysearch;
 
 import java.util.ArrayList;
 import java.util.List;
