@@ -20,6 +20,7 @@ public class LeetCode_154_Find_Minimum_in_Rotated_Sorted_Array_II {
             } else if(nums[mid] < nums[high]){
                 high = mid;
             } else {
+                // 对重复元素进行处理
                 high--;
             }
         }
