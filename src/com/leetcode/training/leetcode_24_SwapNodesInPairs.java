@@ -1,8 +1,6 @@
 package com.leetcode.training;
 
-import com.leetcode.training.ListNode;
-
-class Solution {
+class leetcode_24_SwapNodesInPairs {
     public ListNode swapPairs(ListNode head) {
         if (head == null || head.next == null) {
             return head;

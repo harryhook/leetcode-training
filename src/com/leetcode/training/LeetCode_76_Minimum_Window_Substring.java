@@ -10,7 +10,7 @@ public class LeetCode_76_Minimum_Window_Substring {
 
         char c = 0;
         System.out.println(--c);
-        System.out.println(client.minWindow2("ADBANC", "ABC"));
+        System.out.println(client.minWindow("ADBANC", "ABC"));
         ;
     }
 

@@ -1,4 +1,4 @@
-package com.leetcode.training;
+package com.leetcode.training.binarysearch;
 
 public class LeetCode_81_Search_in_Rotated_Sorted_Array {
     public static void main(String[] args) {
@@ -7,7 +7,29 @@ public class LeetCode_81_Search_in_Rotated_Sorted_Array {
 
         LeetCode_81_Search_in_Rotated_Sorted_Array client = new LeetCode_81_Search_in_Rotated_Sorted_Array();
 
-        System.out.println(client.search(nums, 3));
+        System.out.println(client.search1(nums, 3));
+    }
+    public boolean search1(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return false;
+        }
+        if (nums.length == 1) return target == nums[0] ? true : false;
+
+        int low = -1;
+        int high = nums.length;
+
+        while (low + 1 != high) {
+            int mid = low + (high - low) / 2;
+
+            if (nums[mid] == target) {
+                return true;
+            }
+
+            if(nums[mid] < target) {
+
+            }
+        }
+        return false;
     }
 
     public boolean search(int[] nums, int target) {

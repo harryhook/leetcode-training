@@ -9,7 +9,7 @@ public class LeetCode_242_Valid_Anagram {
     public static void main(String[] args) {
         LeetCode_242_Valid_Anagram client = new LeetCode_242_Valid_Anagram();
 
-        client.isAnagram("a", "b");
+        System.out.println( client.isAnagram("aa", "b"));
 
 
     }

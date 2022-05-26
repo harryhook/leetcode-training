@@ -11,7 +11,7 @@ public class LeetCode_54_SpiralOrder {
 
         int[][] matrix = {{1,2}, {3,4}};
 
-        client.spiralOrder(matrix);
+        System.out.println( client.spiralOrder(matrix));;
     }
 
 

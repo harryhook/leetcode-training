@@ -10,7 +10,7 @@
                Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
                
                
-## 思路1， 循环遍历， 每次找出最长的不包含重复字符的自传
+## 思路1， 循环遍历， 每次找出最长的不包含重复字符的子串
 ```java
 public int lengthOfLongestSubstring(String s) {
         int res = 0;

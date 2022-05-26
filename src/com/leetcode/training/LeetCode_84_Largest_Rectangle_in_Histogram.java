@@ -7,7 +7,7 @@ public class LeetCode_84_Largest_Rectangle_in_Histogram {
     public static void main(String[] args) {
         LeetCode_84_Largest_Rectangle_in_Histogram client = new LeetCode_84_Largest_Rectangle_in_Histogram();
         int[] nums = {2, 1, 5, 6, 2, 3};
-        client.largestRectangleArea2(nums);
+        System.out.println(client.largestRectangleArea(nums));
 
     }
 

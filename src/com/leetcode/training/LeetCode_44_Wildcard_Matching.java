@@ -2,6 +2,12 @@ package com.leetcode.training;
 
 public class LeetCode_44_Wildcard_Matching {
 
+
+    public static void main(String[] args) {
+        LeetCode_44_Wildcard_Matching client = new LeetCode_44_Wildcard_Matching();
+        System.out.println(client.isMatch("abc", "a*c"));
+    }
+
     public boolean isMatch(String s, String p) {
         boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
 
@@ -18,10 +24,10 @@ public class LeetCode_44_Wildcard_Matching {
 
                 if (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '?') {
                     dp[i][j] = dp[i - 1][j - 1];
-                } else if (p.charAt(j-1) == '*') {
+                } else if (p.charAt(j - 1) == '*') {
                     dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
                 } else {
-                    dp[i][j]  = false;
+                    dp[i][j] = false;
                 }
             }
         }

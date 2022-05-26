@@ -1,4 +1,4 @@
-package com.leetcode.training;
+package com.leetcode.training.backtarcking;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +53,8 @@ public class LeetCode_131_Palindrome_Partitioning {
     public static void main(String[] args) {
         LeetCode_131_Palindrome_Partitioning client = new LeetCode_131_Palindrome_Partitioning();
 
-        List<List<String>> res =  client.partition("aab");
+        List<List<String>> res =  client.partition("aaab");
+        System.out.println(res);
 
     }
 

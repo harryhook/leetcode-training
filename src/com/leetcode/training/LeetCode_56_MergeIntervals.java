@@ -14,7 +14,12 @@ public class LeetCode_56_MergeIntervals {
 
         LeetCode_56_MergeIntervals client = new LeetCode_56_MergeIntervals();
 
-        client.merge(nums);
+        for (int[] ints : client.merge(nums)) {
+            for (int anInt : ints) {
+                System.out.print(anInt);
+            }
+            System.out.println();
+        }
     }
 
 

@@ -10,7 +10,15 @@ import java.util.Arrays;
 public class LeetCode_57_Insert_Interval {
 
     public static void main(String[] args) {
+        LeetCode_57_Insert_Interval client = new LeetCode_57_Insert_Interval();
+       int [][]res =  client.insert(new int[][]{{1,6},{9,14}}, new int[]{8,11,17});
 
+        for (int[] ints : res) {
+            for (int anInt : ints) {
+                System.out.print(anInt);
+            }
+            System.out.println();
+        }
     }
 
     public int[][] insert(int[][] intervals, int[] newInterval) {

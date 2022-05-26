@@ -1,4 +1,4 @@
-package com.leetcode.training;
+package com.leetcode.training.backtarcking;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,11 +8,11 @@ import java.util.List;
  * @author chenhaowei
  * @date 2020.07.26
  */
-public class LeetCode_47_Permutations_II {
+public class LeetCode_46_Permutations {
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 2};
-        LeetCode_47_Permutations_II client = new LeetCode_47_Permutations_II();
+        int[] nums = {1, 2, 3};
+        LeetCode_46_Permutations client = new LeetCode_46_Permutations();
 
         System.out.println(client.subsets(nums));
     }
@@ -24,26 +24,25 @@ public class LeetCode_47_Permutations_II {
         }
 
         Arrays.sort(nums);
-        boolean[] used = new boolean[nums.length];
-        backTrack(res, nums, new ArrayList<>(), used);
+
+        backTrack(res, nums, new ArrayList<>());
 
         return res;
 
 
     }
 
-    private void backTrack(List<List<Integer>> res, int[] nums, ArrayList<Integer> temp, boolean[] used) {
+    private void backTrack(List<List<Integer>> res, int[] nums, ArrayList<Integer> temp) {
 
         if (temp.size() == nums.length) {
             res.add(new ArrayList<>(temp));
         } else {
             for (int i = 0; i < nums.length; i++) {
-                if (used[i]) continue;
-                if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) continue;
-                used[i] = true;
+                if (temp.contains(nums[i])) {
+                    continue;
+                }
                 temp.add(nums[i]);
-                backTrack(res, nums, temp, used);
-                used[i] = false;
+                backTrack(res, nums, temp);
                 temp.remove(temp.size() - 1);
             }
         }

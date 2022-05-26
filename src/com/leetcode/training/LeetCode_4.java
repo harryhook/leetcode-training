@@ -38,7 +38,7 @@ public class LeetCode_4 {
                 if ((x + y) % 2 == 0) {
                     return (double) (Math.max(maxLeftX, maxLeftY) + Math.min(minRightX, minRightY)) / 2;
                 } else {
-                    return (double) (Math.max(maxLeftX, maxLeftY));
+                    return Math.max(maxLeftX, maxLeftY);
                 }
             } else if (maxLeftX > minRightY) {
                 high = partationX - 1;

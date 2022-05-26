@@ -8,7 +8,7 @@ public class LeetCode_50_My_Pow {
 
     public static void main(String[] args) {
         LeetCode_50_My_Pow client = new LeetCode_50_My_Pow();
-        client.pow(2.5, 2);
+        System.out.println( client.pow(4, -1));;
     }
 
     public double pow(double x, int n) {

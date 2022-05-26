@@ -7,14 +7,26 @@ public class LeetCode_236_LCA_OF_Binary_Tree {
 
     public static void main(String[] args) {
         LeetCode_236_LCA_OF_Binary_Tree client = new LeetCode_236_LCA_OF_Binary_Tree();
+        TreeNode root = new TreeNode(1);
+        TreeNode right1 = new TreeNode(2);
+        TreeNode left1 = new TreeNode(3);
+        TreeNode right2 = new TreeNode(4);
+        TreeNode left2 = new TreeNode(5);
 
-        client.lowestCommonAncestor(null, null, null);
+        root.left = left1;
+        root.right = right1;
+
+        right1.right = right2;
+        left1.left = left2;
+
+
+        System.out.println(client.lowestCommonAncestor(root, right2, right1).val);
     }
 
-    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) return root;
-        TreeNode left = lowestCommonAncestor1(root.left, p, q);
-        TreeNode right = lowestCommonAncestor1(root.right, p, q);
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
 
         if (left != null && right != null) return root;
 
@@ -23,7 +35,7 @@ public class LeetCode_236_LCA_OF_Binary_Tree {
 
     }
 
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
 
         List<Integer> rootPath = new ArrayList<>();
         List<Integer> pPath = new ArrayList<>();

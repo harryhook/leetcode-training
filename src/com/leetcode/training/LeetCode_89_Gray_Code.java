@@ -11,7 +11,7 @@ public class LeetCode_89_Gray_Code {
 
     public static void main(String[] args) {
         LeetCode_89_Gray_Code client = new LeetCode_89_Gray_Code();
-        client.grayCode(3).forEach(o-> System.out.println(o));
+        client.grayCode(3).forEach(o-> System.out.print(o));
 
 
 

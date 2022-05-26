@@ -12,7 +12,7 @@ public class LeetCode_51_N_Queenes {
 
     public static void main(String[] args) {
         LeetCode_51_N_Queenes client = new LeetCode_51_N_Queenes();
-        System.out.println(client.nQueue(8).size());
+        System.out.println(client.nQueue(4).size());
 
     }
 
@@ -30,6 +30,12 @@ public class LeetCode_51_N_Queenes {
 
         dfs(res, matrix, 0);
 
+        res.forEach( o->{
+            o.forEach( m-> {
+                System.out.println(m);
+            });
+            System.out.println();
+        });
         return res;
     }
 

@@ -11,6 +11,9 @@ public class LeetCode_66_Plus_One {
 
     public static void main(String[] args) {
         LeetCode_66_Plus_One client = new LeetCode_66_Plus_One();
+        for (int i : client.plusOne(new int[]{8,9,9})) {
+            System.out.println(i);
+        }
     }
 
     public int[] plusOne(int[] digits) {

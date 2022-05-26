@@ -9,7 +9,7 @@ public class LeetCode_64_Minimum_Path_Sum {
     public static void main(String[] args) {
         LeetCode_64_Minimum_Path_Sum client = new LeetCode_64_Minimum_Path_Sum();
         int[][] grid = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
-        client.minPathSum(grid);
+        System.out.println( client.minPathSum(grid));;
 
     }
 
