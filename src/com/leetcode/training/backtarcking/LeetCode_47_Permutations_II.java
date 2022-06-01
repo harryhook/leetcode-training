@@ -36,16 +36,17 @@ public class LeetCode_47_Permutations_II {
 
         if (temp.size() == nums.length) {
             res.add(new ArrayList<>(temp));
-        } else {
-            for (int i = 0; i < nums.length; i++) {
-                if (used[i]) continue;
-                if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) continue;
-                used[i] = true;
-                temp.add(nums[i]);
-                backTrack(res, nums, temp, used);
-                used[i] = false;
-                temp.remove(temp.size() - 1);
-            }
+            return;
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            if (used[i]) continue;
+            if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) continue;
+            used[i] = true;
+            temp.add(nums[i]);
+            backTrack(res, nums, temp, used);
+            used[i] = false;
+            temp.remove(temp.size() - 1);
         }
 
     }

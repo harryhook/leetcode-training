@@ -46,6 +46,5 @@ public class LeetCode_46_Permutations {
                 temp.remove(temp.size() - 1);
             }
         }
-
     }
 }
