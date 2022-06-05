@@ -7,6 +7,20 @@ t的右子树不空，则t的后继是其右子树中最小的那个元素。 t�
 ```java
 
 public class LeetCode_285_InorderSuccessor {
+    // 同理找寻前驱结点，如果左子树不为空，找到当前节点的左节点返回即可
+    public TreeNode findPrecursor(TreeNode root, TreeNode p) {
+        if (root == null || p == null) return null;
+        TreeNode t = null;
+        while (root != null) {
+            if (root.val >= p.val) {
+                root = root.left;
+            } else {
+                t = root;
+                root = root.right;
+            }
+        }
+        return t;
+    }
     
     public TreeNode successor(TreeNode x) {
         TreeNode successor;
@@ -32,7 +46,7 @@ public class LeetCode_285_InorderSuccessor {
         }
 
     }
-    // 如果当前二叉树没有父节点标记
+    // 如果当前二叉树没有父节点标记，以根节点为当前节点，比当前节点大，当前节点走左子树，比当前节点小， 走右子树， 找到右子树的最小节点或者左子树的根
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
         if (root == null || p == null) return null;
         TreeNode t = null;

@@ -47,4 +47,19 @@ public class LeetCode_285_InorderSuccessor {
         }
 
     }
+
+
+    public TreeNode findPrecursor(TreeNode root, TreeNode p) {
+        if (root == null || p == null) return null;
+        TreeNode t = null;
+        while (root != null) {
+            if (root.val < p.val) {
+                t = root;
+                root = root.left;
+            } else {
+                root = root.right;
+            }
+        }
+        return t;
+    }
 }
