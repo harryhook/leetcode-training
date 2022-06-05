@@ -8,6 +8,11 @@ import java.util.Set;
  * @date 2019.03.19
  */
 public class LeetCode_3_LongestSubstring {
+
+    public static void main(String[] args) {
+        LeetCode_3_LongestSubstring client = new LeetCode_3_LongestSubstring();
+        System.out.println(client.lengthOfLongestSubstring1("abcabcd"));
+    }
     public int lengthOfLongestSubstring(String s) {
         int res = 0;
 
@@ -34,14 +39,14 @@ public class LeetCode_3_LongestSubstring {
     }
 
     public int lengthOfLongestSubstring1(String s) {
-        int res = 0, end = 0, front = 0;
+        int right = 0, left = 0, res = 0;
         Set<Character> set = new HashSet<>();
-        while (end < s.length()) {
-            if (!set.contains(s.charAt(end))) {
-                set.add(s.charAt(end++));
+        while (right < s.length()) {
+            if (!set.contains(s.charAt(right))) {
+                set.add(s.charAt(right++));
                 res = Math.max(res, set.size());
             } else {
-                set.remove(front++);
+                set.remove(s.charAt(left++));
             }
         }
         return res;
