@@ -1,4 +1,6 @@
-package com.leetcode.training;
+package com.leetcode.training.linkedlist;
+
+import com.leetcode.training.ListNode;
 
 public class LeetCode_148_SortList {
 

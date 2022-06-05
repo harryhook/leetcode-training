@@ -1,5 +1,7 @@
-package com.leetcode.training;
+package com.leetcode.training.binarytree;
 
+
+import com.leetcode.training.TreeNode;
 
 /**
  * 后继节点

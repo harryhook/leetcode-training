@@ -1,4 +1,6 @@
-package com.leetcode.training;
+package com.leetcode.training.linkedlist;
+
+import com.leetcode.training.ListNode;
 
 /**
  * 1.利用虚拟头结点使得所有结点按同样的逻辑处理；

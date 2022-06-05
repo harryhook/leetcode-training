@@ -5,12 +5,12 @@ package com.leetcode.training;
  * @date 2019.07.06
  */
 public class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode parent;
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+    public TreeNode parent;
 
-    TreeNode(int x) {
+    public TreeNode(int x) {
         val = x;
     }
 

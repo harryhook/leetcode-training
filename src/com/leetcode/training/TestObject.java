@@ -9,32 +9,21 @@ import java.lang.ref.WeakReference;
 
 public class TestObject {
 
-    private byte[]  bytes = new byte[1024 * 1024 * 1024];
+    private static  Integer num = 1;
 
     public static void main(String[] args) {
         TestObject object1 = new TestObject();
-        WeakReference<TestObject> object3 = new WeakReference<>(new TestObject());
-        System.gc();
-        System.out.println(object3.get());  // null
 
-//        ReferenceQueue referenceQueue = new ReferenceQueue<>();
-//        PhantomReference<TestObject> object4 = new PhantomReference<>(new TestObject(), referenceQueue);
-//        System.out.println(referenceQueue.poll());  // null
-//        System.gc();
-//        System.out.println(object4.get());  // null
-//        System.out.println(referenceQueue.poll());  //java.lang.ref.PhantomReference@6e0be858
+        int a = 1;
+        int b = 1;
 
-        TestObject testPhantomObject = new TestObject();
-
-        Cleaner testPhantomObjectCleaner = Cleaner.create(testPhantomObject, new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("clean testPhantomObject");
-            }
-        });
-
-        testPhantomObject = null;
-        System.gc();
+        Person person = new Person();
+        person.id = 1;
 
     }
+}
+
+class Person {
+     int id;
+     String name;
 }

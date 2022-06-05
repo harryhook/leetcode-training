@@ -1,5 +1,7 @@
-package com.leetcode.training;
+package com.leetcode.training.linkedlist;
 
+
+import com.leetcode.training.ListNode;
 
 /**
  * @author chenhaowei
