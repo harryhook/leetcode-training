@@ -83,7 +83,6 @@ public class LeetCode_76_Minimum_Window_Substring {
                     minLeft = left;
                     minLen = right - left;
                 }
-
                 char leftChar = s.charAt(left);
                 left++;
                 // 进行窗口的下一次调整
