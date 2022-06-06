@@ -16,7 +16,6 @@ public class LeetCode_438_Find_All_Anagrams_in_a_String {
 
     public List<Integer> findAnagrams(String s, String t) {
 
-
         if (s == null || t == null || s.isEmpty() || t.isEmpty()) return new ArrayList<>();
 
         Map<Character, Integer> needMmap = new HashMap<>();
