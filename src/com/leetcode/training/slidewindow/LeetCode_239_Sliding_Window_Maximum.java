@@ -1,7 +1,9 @@
-package com.leetcode.training;
+package com.leetcode.training.slidewindow;
 
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.List;
 
 public class LeetCode_239_Sliding_Window_Maximum {
 
@@ -18,7 +20,7 @@ public class LeetCode_239_Sliding_Window_Maximum {
 
     }
 
-    public int[] maxSlidingWindow(int[] nums, int k) {
+    public int[] maxSlidingWindow1(int[] nums, int k) {
 
         // 核心思想，滑动窗口， peekFirst 是当前区间的最大值, pollFirst 限定当前区间的元素， pollLast 给最大元素让位置
 
@@ -43,5 +45,46 @@ public class LeetCode_239_Sliding_Window_Maximum {
             }
         }
         return res;
+    }
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        MaxQueue queue = new MaxQueue();
+
+        List<Integer> list = new ArrayList<>();
+
+        for(int i=0; i<nums.length; i++) {
+
+            if(i<k-1) {
+                queue.push(nums[i]);
+            } else {
+                queue.push(nums[i]);
+                list.add(queue.getMax());
+                queue.pop(nums[i-k+1]);
+            }
+        }
+        int[] res = new int[nums.length-k+1];
+        for(int i=0; i<nums.length-k+1; i++) {
+            res[i] = list.get(i);
+        }
+        return res;
+    }
+}
+class MaxQueue {
+
+    LinkedList<Integer> queue = new LinkedList<>();
+
+    public void push(int n) {
+        while(!queue.isEmpty() && queue.peekLast() < n) {
+            queue.pollLast();
+        }
+        queue.offerLast(n);
+    }
+
+    public Integer getMax() {
+        return queue.peekFirst();
+    }
+    public void pop(int n) {
+        if(n == queue.peekFirst()) {
+            queue.pollFirst();
+        }
     }
 }
