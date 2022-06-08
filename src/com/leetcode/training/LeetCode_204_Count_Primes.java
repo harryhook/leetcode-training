@@ -10,6 +10,7 @@ public class LeetCode_204_Count_Primes {
     public static void main(String[] args) {
         LeetCode_204_Count_Primes findAllNums = new LeetCode_204_Count_Primes();
         System.out.println(findAllNums.findPrimes(12));
+
     }
 
     /**
@@ -31,8 +32,8 @@ public class LeetCode_204_Count_Primes {
             }
         }
 
-        for(int i=2; i<n; i++) {
-            if(isPrime[i]) res.add(i);
+        for (int i = 2; i < n; i++) {
+            if (isPrime[i]) res.add(i);
         }
 
         return res;
@@ -47,22 +48,5 @@ public class LeetCode_204_Count_Primes {
         return true;
     }
 
-    // 有序集合，求并集
-    public List<Integer> findIntersction(List<Integer> list1, List<Integer> list2) {
-
-
-        int left = 0, right = 0;
-        List<Integer> res = new ArrayList<>();
-
-        while (right < list2.size()) {
-            // 双指针
-
-
-        }
-
-
-        return res;
-
-    }
 
 }
