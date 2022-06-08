@@ -12,7 +12,7 @@ public class LeetCode_239_Sliding_Window_Maximum {
 
         LeetCode_239_Sliding_Window_Maximum client = new LeetCode_239_Sliding_Window_Maximum();
 
-        int[] res = client.maxSlidingWindow(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3);
+        int[] res = client.maxSlidingWindow1(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3);
 
         for (int n : res) {
             System.out.println(n);
