@@ -6,10 +6,13 @@ import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class TestObject {
 
-    private static  Integer num = 1;
+    private static Integer num = 1;
 
     public static void main(String[] args) {
         TestObject object1 = new TestObject();
@@ -20,10 +23,19 @@ public class TestObject {
         Person person = new Person();
         person.id = 1;
 
+        Executor executor = Executors.newFixedThreadPool(10);
+
+        for (int i = 0; i < 10000; i++) {
+            executor.execute(() -> {
+                System.out.println(Thread.currentThread().getName() + " " );
+            });
+        }
+
     }
 }
 
-class Person {
-     int id;
-     String name;
-}
+    class Person {
+        int id;
+        String name;
+    }
+
