@@ -8,8 +8,8 @@ public class LeetCode_986_Interval_List_Intersections {
     public static void main(String[] args) {
         LeetCode_986_Interval_List_Intersections client = new LeetCode_986_Interval_List_Intersections();
 
-        int[][] firstList = new int[][]{{0, 2}, {5, 10}, {13, 23}, {24, 25}};
-        int[][] secondList = new int[][]{{1, 5}, {8, 12}, {15, 24}, {25, 26}};
+        int[][] firstList = new int[][]{{8, 15}};
+        int[][] secondList = new int[][]{{2, 6}, {8, 10}, {12, 20}};
 
         client.intervalIntersection(firstList, secondList);
     }
@@ -27,18 +27,22 @@ public class LeetCode_986_Interval_List_Intersections {
             int[] b = secondList[j];
 
 
-            if (a[0] <= b[1] && b[0] <= a[1]) {
+            if (a[1] < b[0]) {
+                i++;
+            } else if (a[0] > b[1]) {
+                j++;
+            } else if (a[0] <= b[1] && b[0] <= a[1]) {
                 int[] temp = new int[]{Math.max(a[0], b[0]), Math.min(a[1], b[1])};
                 res.add(temp);
-                if(a[0] < b[1]) {
+                // 当前区间谁的指向小谁加1
+                if (a[1] < b[1]) {
                     i++;
+                } else if (a[1] > b[1]) {
+                    j++;
                 } else {
+                    i++;
                     j++;
                 }
-            } else  if (a[1] < b[1]) {
-                i++;
-            } else if (a[1] > b[1]) {
-                j++;
             }
         }
 
