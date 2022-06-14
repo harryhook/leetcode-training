@@ -27,30 +27,20 @@ public class LeetCode_986_Interval_List_Intersections {
             int[] b = secondList[j];
 
 
-            if (a[1] < b[0]) {
-                i++;
-            } else if (a[0] > b[1]) {
-                j++;
-            } else if (a[0] <= b[1] && b[0] <= a[1]) {
-                int[] temp = new int[]{Math.max(a[0], b[0]), Math.min(a[1], b[1])};
-                res.add(temp);
-                // 当前区间谁的指向小谁加1
-                if (a[1] < b[1]) {
-                    i++;
-                } else if (a[1] > b[1]) {
-                    j++;
-                } else {
-                    i++;
-                    j++;
-                }
+            int low = Math.max(a[0], b[0]);
+            int high = Math.min(a[1], b[1]);
+            if (low <= high) {
+                res.add(new int[]{low, high});
             }
+            if (a[1] < b[1]) {
+                i++;
+            } else {
+                j++;
+            }
+
         }
 
-        int[][] resArr = new int[res.size()][2];
-        for (int k = 0; k < res.size(); k++) {
-            resArr[k][0] = res.get(k)[0];
-            resArr[k][1] = res.get(k)[1];
-        }
-        return resArr;
+        return res.toArray(new int[0][]);
+
     }
 }
