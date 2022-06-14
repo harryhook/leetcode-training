@@ -26,7 +26,6 @@ public class LeetCode_986_Interval_List_Intersections {
             int[] a = firstList[i];
             int[] b = secondList[j];
 
-
             int low = Math.max(a[0], b[0]);
             int high = Math.min(a[1], b[1]);
             if (low <= high) {
@@ -37,9 +36,7 @@ public class LeetCode_986_Interval_List_Intersections {
             } else {
                 j++;
             }
-
         }
-
         return res.toArray(new int[0][]);
 
     }
