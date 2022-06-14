@@ -1,12 +1,12 @@
 package com.leetcode.training;
 
-public class LeetCode_4 {
+public class LeetCode_4_FindMedianSortedArrays {
 
     public static void main(String[] args) {
         int [] nums1 = {1,3,5,7,9};
         int [] nums2 = {2,4};
 
-        LeetCode_4 client = new LeetCode_4();
+        LeetCode_4_FindMedianSortedArrays client = new LeetCode_4_FindMedianSortedArrays();
 
         System.out.println( client.findMedianSortedArrays(nums1, nums2));
 
