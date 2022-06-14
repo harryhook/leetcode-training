@@ -1,7 +1,5 @@
 package com.leetcode.training.binarysearch;
 
-import com.sun.tools.javac.util.Assert;
-
 import java.util.Objects;
 
 public class FindTarget {
