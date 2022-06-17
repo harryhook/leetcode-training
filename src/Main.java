@@ -1,53 +1,71 @@
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.Stack;
 
 public class Main {
-    public static void main(String[] args) {
-
-        int[] nums1 = new int[]{1, 4};
-        int[] nums2 = new int[]{3, 6};
-        int[] nums3 = new int[]{8, 12};
-        int[] nums4 = new int[]{9, 10};
-
-        List<int[]> numsList = new ArrayList<>();
-        numsList.add(nums1);
-        numsList.add(nums2);
-        numsList.add(nums3);
-        numsList.add(nums4);
-
-        Main main = new Main();
-        List<int[]> res = main.mergeNums(numsList);
-        for (int i = 0; i < res.size(); i++) {
-            int[] curr = res.get(i);
-            System.out.println(curr[0] + " " + curr[1]);
-        }
-    }
-
-    private List<int[]> mergeNums(List<int[]> nums) {
-        if (nums.size() == 0) return new ArrayList<>();
-        // Arrays.sort(nums);
-
-        List<int[]> res = new ArrayList<>();
-
-        int[] temp  = new int[2];
-        for (int i=0, j = 1;  j < nums.size() ; j++) {
-            // 大于暂存
-            if (nums.get(i)[1] > nums.get(j)[0]) {
-                temp[0] = nums.get(i)[0];
-                temp[1] = Math.max( nums.get(j)[1], nums.get(i)[1]);
-
-            } else if (nums.get(i)[1] < nums.get(j)[0]) {
-                res.add(new int[]{temp[0], temp[1]});
-                i = j;
+    public static float evaluate(String expression) {
+        char[] tokens = expression.toCharArray();
+        Stack<Float> num = new Stack<Float>();
+        Stack<Character> ops = new Stack<Character>();
+        for (int i = 0; i < tokens.length; i++) {
+            if (tokens[i] == ' ') {
+                continue;
             }
-
+            if (tokens[i] >= '0' && tokens[i] <= '9') {
+                StringBuffer buffer = new StringBuffer();
+                while (i < tokens.length && tokens[i] >= '0' && tokens[i] <= '9') {
+                    buffer.append(tokens[i++]);
+                }
+                i--; //回退一位
+                num.push(Float.parseFloat(buffer.toString()));
+            } else if (tokens[i] == '(') {
+                ops.push(tokens[i]);
+            } else if (tokens[i] == ')') {
+                while (ops.peek() != '(') {
+                    num.push(caculate(ops.pop(), num.pop(), num.pop()));
+                }
+                ops.pop();
+            } else if (tokens[i] == '+' || tokens[i] == '-' || tokens[i] == '*' || tokens[i] == '/') {
+                while (!ops.empty() && hasPrecedence(tokens[i], ops.peek())) {
+                    num.push(caculate(ops.pop(), num.pop(), num.pop()));
+                }
+                ops.push(tokens[i]);
+            }
         }
-        res.add(temp);
-
-        return res;
-
+        while (!ops.empty()) {
+            num.push(caculate(ops.pop(), num.pop(), num.pop()));
+        }
+        return num.pop();
     }
 
+    public static boolean hasPrecedence(char op1, char op2) {
+        if (op2 == '(' || op2 == ')')
+            return false;
+        if ((op1 == '*' || op1 == '/') && (op2 == '+' || op2 == '-'))
+            return false;
+        else
+            return true;
+    }
+
+    public static float caculate(char ops, float b, float a) {
+        switch (ops) {
+            case '+':
+                return a + b;
+            case '-':
+                return a - b;
+            case '*':
+                return a * b;
+            case '/':
+                if (b == 0) {
+                    throw new UnsupportedOperationException("Cannot divide by zero");
+                }
+                return a / b;
+        }
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Main.evaluate("2 + 3 * 4 + 5"));
+        System.out.println(Main.evaluate("100 * 2 + 12"));
+        System.out.println(Main.evaluate("100 * ( 2 + 12 )"));
+        System.out.println(Main.evaluate("100 * ( 2 + 12 ) / 14"));
+    }
 }
