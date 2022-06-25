@@ -26,6 +26,7 @@ public class LeetCode_1034_Coloring_A_Border {
         if (visited[r][c] == 1) return;
         visited[r][c] = 1;
         int flag = 0;
+        // 四个方向挨个遍历一遍
         for (int[] dir : dirs) {
             int x = r + dir[0];
             int y = c + dir[1];
