@@ -10,7 +10,7 @@ public class LeetCode_654_Maximum_Binary_Tree {
 
     public static void main(String[] args) {
         LeetCode_654_Maximum_Binary_Tree client = new LeetCode_654_Maximum_Binary_Tree();
-        PreOrderPrint print = new PreOrderPrint();
+        TreeNodePrint print = new TreeNodePrint();
         print.preorderTraversal(client.constructMaximumBinaryTree(new int[]{3,2,1,6,0,5}));
     }
     public TreeNode constructMaximumBinaryTree(int[] nums) {
