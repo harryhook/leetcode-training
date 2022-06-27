@@ -1,4 +1,4 @@
-package com.leetcode.training;
+package com.leetcode.training.binarytree;
 
 /**
  * Input: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
@@ -11,6 +11,8 @@ package com.leetcode.training;
  * Input: preorder = [-1], inorder = [-1]
  * Output: [-1]
  */
+
+import com.leetcode.training.TreeNode;
 
 /**
  * @author chenhaowei
