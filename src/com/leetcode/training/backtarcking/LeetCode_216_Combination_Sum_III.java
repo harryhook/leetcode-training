@@ -13,28 +13,36 @@ import java.util.List;
  */
 public class LeetCode_216_Combination_Sum_III {
 
+    public static void main(String[] args) {
+
+        LeetCode_216_Combination_Sum_III client = new LeetCode_216_Combination_Sum_III();
+
+        int[] nums = {1, 2, 3};
+        System.out.println(client.combinationSum3(3, 7));
+    }
+
     public List<List<Integer>> combinationSum3(int k, int n) {
 
-        List<List<Integer>>  res = new ArrayList<>();
+        List<List<Integer>> res = new ArrayList<>();
 
-        backTrack( res, new ArrayList<>(), k, n, 1);
+        backTrack(res, new ArrayList<>(), k, n, 1);
 
         return res;
     }
 
-    private void backTrack( List<List<Integer>>  res, List<Integer> temp, int k, int n, int start) {
+    private void backTrack(List<List<Integer>> res, List<Integer> temp, int k, int n, int start) {
 
-        if(temp.size() == k && n == 0) {
+        if (temp.size() == k && n == 0) {
             res.add(new ArrayList<>(temp));
-            return ;
+            return;
         }
-        if(n < 0 || temp.size() > k) return ;
+        if (n < 0 || temp.size() > k) return;
 
-        for(int i= start; i<=9; i++) {
+        for (int i = start; i <= 9; i++) {
 
             temp.add(i);
-            backTrack(res, temp, k, n-i, i + 1);
-            temp.remove(temp.size()-1);
+            backTrack(res, temp, k, n - i, i + 1);
+            temp.remove(temp.size() - 1);
 
         }
 
