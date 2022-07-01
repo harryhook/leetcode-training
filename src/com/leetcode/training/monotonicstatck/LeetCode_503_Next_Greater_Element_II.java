@@ -6,7 +6,9 @@ public class LeetCode_503_Next_Greater_Element_II {
     public static void main(String[] args) {
         LeetCode_503_Next_Greater_Element_II client = new LeetCode_503_Next_Greater_Element_II();
 
-        client.nextGreaterElements(new int[]{ 1,2,3,4,3});
+        for (int num : client.nextGreaterElements(new int[]{1, 2, 3, 4, 3})) {
+            System.out.print(num + " ");
+        }
     }
 
     public int[] nextGreaterElements(int[] nums) {

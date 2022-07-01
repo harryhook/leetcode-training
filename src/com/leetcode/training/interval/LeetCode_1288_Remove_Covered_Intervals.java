@@ -2,6 +2,9 @@ package com.leetcode.training.interval;
 
 import java.util.Arrays;
 
+/**
+ * example: [1,2],[1,4],[3,4]
+ */
 public class LeetCode_1288_Remove_Covered_Intervals {
 
     public static void main(String[] args) {
