@@ -1,4 +1,4 @@
-package com.leetcode.training;
+package com.leetcode.training.matrix;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +12,9 @@ public class LeetCode_59_SpiralMatrix {
         LeetCode_59_SpiralMatrix client = new LeetCode_59_SpiralMatrix();
 
 
-      int[][] matrix = client.generateMatrix(3);
-        for(int i=0; i<matrix[0].length; i++) {
-            for(int j=0; j<matrix[0].length; j++) {
+        int[][] matrix = client.generateMatrix(3);
+        for (int i = 0; i < matrix[0].length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
                 System.out.println(matrix[i][j]);
             }
         }

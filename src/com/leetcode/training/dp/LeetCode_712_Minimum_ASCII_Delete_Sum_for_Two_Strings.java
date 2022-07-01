@@ -1,7 +1,5 @@
 package com.leetcode.training.dp;
 
-import java.util.Arrays;
-
 /**
  * Example 1:
  * <p>
@@ -11,10 +9,10 @@ import java.util.Arrays;
  * Deleting "t" from "eat" adds 116 to the sum.
  * At the end, both strings are equal, and 115 + 116 = 231 is the minimum sum possible to achieve this.
  */
-public class LeetCod_712_Minimum_ASCII_Delete_Sum_for_Two_Strings {
+public class LeetCode_712_Minimum_ASCII_Delete_Sum_for_Two_Strings {
 
     public static void main(String[] args) {
-        LeetCod_712_Minimum_ASCII_Delete_Sum_for_Two_Strings client = new LeetCod_712_Minimum_ASCII_Delete_Sum_for_Two_Strings();
+        LeetCode_712_Minimum_ASCII_Delete_Sum_for_Two_Strings client = new LeetCode_712_Minimum_ASCII_Delete_Sum_for_Two_Strings();
         System.out.println( client.minimumDeleteSum("sea","eat"));
     }
     int[][] memo;

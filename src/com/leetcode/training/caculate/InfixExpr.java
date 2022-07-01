@@ -1,4 +1,4 @@
-package com.leetcode.training.calculate;
+package com.leetcode.training.caculate;
 
 import java.util.Stack;
 
