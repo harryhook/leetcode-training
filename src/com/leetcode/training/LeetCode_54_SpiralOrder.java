@@ -9,9 +9,10 @@ public class LeetCode_54_SpiralOrder {
 
         LeetCode_54_SpiralOrder client = new LeetCode_54_SpiralOrder();
 
-        int[][] matrix = {{1,2}, {3,4}};
+        int[][] matrix = {{1, 2}, {3, 4}};
 
-        System.out.println( client.spiralOrder(matrix));;
+        System.out.println(client.spiralOrder(matrix));
+        ;
     }
 
 
@@ -25,7 +26,6 @@ public class LeetCode_54_SpiralOrder {
 
         int rowBegin = 0, rowEnd = matrix.length - 1;
         int colBegin = 0, colEnd = matrix[0].length - 1;
-
 
         while (rowBegin <= rowEnd && colBegin <= colEnd) {
             for (int col = colBegin; col <= colEnd; col++) {
@@ -51,9 +51,11 @@ public class LeetCode_54_SpiralOrder {
                 }
             }
             colBegin++;
+
         }
 
         return res;
+
     }
 
 
