@@ -4,3 +4,5 @@ target
 *.DS_Store.gitignore.gitignore
 .class
 *.class
+out
+output
