@@ -1,7 +1,6 @@
 package com.leetcode.training.backtarcking;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -18,33 +17,29 @@ public class LeetCode_46_Permutations {
     }
 
     public List<List<Integer>> subsets(int[] nums) {
+
         List<List<Integer>> res = new ArrayList<>();
-        if (nums.length == 0) {
-            return res;
-        }
 
-        Arrays.sort(nums);
-
-        backTrack(res, nums, new ArrayList<>());
+        dfs(nums,  new ArrayList<>(), res);
 
         return res;
-
-
     }
 
-    private void backTrack(List<List<Integer>> res, int[] nums, ArrayList<Integer> temp) {
+    private void dfs(int[] nums,  ArrayList<Integer> temp, List<List<Integer>> res) {
 
         if (temp.size() == nums.length) {
             res.add(new ArrayList<>(temp));
-        } else {
-            for (int i = 0; i < nums.length; i++) {
-                if (temp.contains(nums[i])) {
-                    continue;
-                }
-                temp.add(nums[i]);
-                backTrack(res, nums, temp);
-                temp.remove(temp.size() - 1);
-            }
+            return;
         }
+
+        for (int i = 0; i < nums.length; i++) {
+            if (temp.contains(nums[i])) {
+                continue;
+            }
+            temp.add(nums[i]);
+            dfs(nums,  temp, res);
+            temp.remove(temp.size() - 1);
+        }
+
     }
 }

@@ -1,6 +1,5 @@
 package com.leetcode.training;
 
-import javafx.util.Pair;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -81,5 +80,33 @@ public class LeetCode_1696_Jump_Game_VI {
         }
 
         return max;
+    }
+}
+
+class Pair<K, V> {
+
+    private Integer key;
+
+    private Integer value;
+
+    public <K, V> Pair(Integer key, Integer value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    public Integer getKey() {
+        return key;
+    }
+
+    public void setKey(Integer key) {
+        this.key = key;
+    }
+
+    public Integer getValue() {
+        return value;
+    }
+
+    public void setValue(Integer value) {
+        this.value = value;
     }
 }
