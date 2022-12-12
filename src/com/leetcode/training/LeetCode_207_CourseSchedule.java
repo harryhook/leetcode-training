@@ -16,6 +16,64 @@ public class LeetCode_207_CourseSchedule {
         System.out.println(result);
     }
 
+    private boolean canFinish = true;
+
+    private boolean[] visited;
+    private boolean[] onPath;
+
+
+    public boolean canFinish1(int numCourses, int[][] prerequisites) {
+
+        visited = new boolean[numCourses];
+        onPath = new boolean[numCourses];
+        // build graph
+        List<Integer>[] graph = buildGraph(numCourses, prerequisites);
+
+        // dfs 遍历，如果已经遍历过的节点被再次遍历到即不可以，，循环完所有节点返回结果即可
+        for(int i=0; i<numCourses; i++) {
+            traverse(i, graph);
+        }
+
+        return canFinish;
+    }
+
+    private void traverse(int cur, List<Integer>[] graph) {
+        // 节点已在访问路径上，返回false， 不可能完成
+        if(onPath[cur]) {
+            canFinish = false;
+            return;
+        }
+        //节点已经被访问，无需再访问一次
+        if (visited[cur]) {
+            return;
+        }
+        visited[cur] = true;
+        onPath[cur] = true;
+        for(int next: graph[cur]) {
+            traverse(next, graph);
+        }
+        //访问完毕，从path移出
+        onPath[cur] = false;
+    }
+
+    private List<Integer>[] buildGraph(int numCourses, int[][] prerequisites) {
+
+        List<Integer>[] graph = new ArrayList[numCourses];
+        // 初始化
+        for (int i = 0; i < numCourses; i++) {
+            graph[i] = new ArrayList<>();
+        }
+
+        for(int[] numCourse: prerequisites ) {
+            int from = numCourse[0];
+            int to = numCourse[1];
+            // 单向图
+            graph[from].add(to);
+        }
+        return graph;
+
+    }
+
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
 
