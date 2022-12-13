@@ -12,7 +12,7 @@ public class LeetCode_78_Subsets {
     public static void main(String[] args) {
 
         LeetCode_78_Subsets client = new LeetCode_78_Subsets();
-        int[] nums = {1,2,3};
+        int[] nums = {1, 2, 3};
 
         System.out.println(client.subsets(nums));
 
