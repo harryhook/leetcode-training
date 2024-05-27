@@ -32,10 +32,12 @@ public class LeetCode_40_Combination_Sum_II {
         }
 
         for (int i = index; i < candidates.length; i++) {
+            // 剪枝
             if (i > index && candidates[i] == candidates[i - 1]) {
                 continue;
             }
             sol.add(candidates[i]);
+            // 不使用重复元素，进入下一层递归
             helper(candidates, i + 1, target - candidates[i], res, sol);
             sol.remove(sol.size() - 1);
         }
@@ -43,11 +45,11 @@ public class LeetCode_40_Combination_Sum_II {
 
     public static void main(String[] args) {
 
-        int[] candidates = {10, 1, 2, 7, 6, 1, 5};
+        int[] candidates = {1,1,2,3};
 
         LeetCode_40_Combination_Sum_II client = new LeetCode_40_Combination_Sum_II();
 
-        System.out.println(client.combinationSum2(candidates, 8));
+        System.out.println(client.combinationSum2(candidates, 3));
     }
 
 }

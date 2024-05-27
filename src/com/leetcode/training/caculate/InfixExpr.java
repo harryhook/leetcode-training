@@ -10,10 +10,10 @@ public class InfixExpr {
 
     public static void main(String[] args) {
         InfixExpr infixExpr = new InfixExpr();
-        System.out.println(infixExpr.infixCaculate("2+4/2+5"));
+        System.out.println(infixExpr.infixCalculate("2+4/2+5"));
     }
 
-    private int infixCaculate(String s) {
+    private int infixCalculate(String s) {
 
         Stack<Integer> s1 = new Stack<>();
         Stack<Character> s2 = new Stack<>();
