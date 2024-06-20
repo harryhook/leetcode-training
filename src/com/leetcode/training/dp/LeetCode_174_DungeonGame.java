@@ -9,10 +9,11 @@ import java.util.Arrays;
 public class LeetCode_174_DungeonGame {
 
     public static void main(String[] args) {
-        LeetCode_174_DungeonGame   client = new LeetCode_174_DungeonGame();
+        LeetCode_174_DungeonGame client = new LeetCode_174_DungeonGame();
         int res = client.calculateMinimumHP(new int[][]{{-2, -3, 3}, {-5, -10, 1}, {10, 30, -5}});
         System.out.println(res);
     }
+
     int[][] memo;
 
     public int calculateMinimumHP(int[][] dungeon) {
@@ -39,7 +40,7 @@ public class LeetCode_174_DungeonGame {
             return Integer.MAX_VALUE;
         }
         // 计算过的位置不再参与计算
-        if(memo[i][j] != -1) {
+        if (memo[i][j] != -1) {
             return memo[i][j];
         }
 

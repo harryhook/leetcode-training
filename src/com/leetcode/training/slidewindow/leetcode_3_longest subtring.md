@@ -38,7 +38,7 @@ public int lengthOfLongestSubstring(String s) {
     }
 ``` 
 然而这种做法在leetcode上是超时的
-
+jieyu
 ##思路2， 利用set存储字符， 判断当前set是否含有当前需要存储的字符
 若没有， set.add(),
 若有， 则删除重复元素，待下次再插入当前判断的元素

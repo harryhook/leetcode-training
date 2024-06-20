@@ -1,6 +1,8 @@
 package com.leetcode.training.slidewindow;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -11,7 +13,7 @@ public class LeetCode_3_LongestSubstring {
 
     public static void main(String[] args) {
         LeetCode_3_LongestSubstring client = new LeetCode_3_LongestSubstring();
-        System.out.println(client.lengthOfLongestSubstring1("abcabcd"));
+        System.out.println(client.lengthOfLongestSubstring2("abcabcbb"));
     }
     public int lengthOfLongestSubstring(String s) {
         int res = 0;
@@ -50,6 +52,27 @@ public class LeetCode_3_LongestSubstring {
             }
         }
         return res;
+    }
+    public int lengthOfLongestSubstring2(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+
+        Map<Character, Integer> map = new HashMap<>();
+        int left = 0, right = 0, maxLen = 0;
+
+        while (right < s.length()) {
+            char c = s.charAt(right);
+            if (map.containsKey(c)) {
+                // 移动左指针，确保窗口内没有重复字符
+                left = Math.max(left, map.get(c) + 1);
+            }
+            map.put(c, right);
+            maxLen = Math.max(maxLen, right - left + 1);
+            right++;
+        }
+
+        return maxLen;
     }
 
     public int fun(String s) {

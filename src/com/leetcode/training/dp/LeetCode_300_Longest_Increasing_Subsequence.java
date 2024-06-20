@@ -23,7 +23,7 @@ public class LeetCode_300_Longest_Increasing_Subsequence {
     public static void main(String[] args) {
         LeetCode_300_Longest_Increasing_Subsequence client = new LeetCode_300_Longest_Increasing_Subsequence();
 
-        int cnt = client.lengthOfLIS2(new int[]{1, 3, 6, 7, 9, 4, 10, 5, 6});
+        int cnt = client.lengthOfLIS(new int[]{10, 9, 2, 5, 3, 7, 101, 18});
 
         System.out.println(cnt);
     }

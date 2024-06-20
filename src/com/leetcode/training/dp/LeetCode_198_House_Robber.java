@@ -2,6 +2,7 @@ package com.leetcode.training.dp;
 
 public class LeetCode_198_House_Robber {
 
+
     public int rob(int[] nums) {
         if (nums.length == 1) return nums[0];
         int[] dp = new int[nums.length];
@@ -35,6 +36,6 @@ public class LeetCode_198_House_Robber {
     public static void main(String[] args) {
         LeetCode_198_House_Robber client = new LeetCode_198_House_Robber();
 
-        System.out.println(client.rob2(new int[]{1, 2, 3, 1}));
+        System.out.println(client.rob2(new int[]{1, 2, 3, 1, 1, 4}));
     }
 }
