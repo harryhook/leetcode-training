@@ -8,7 +8,7 @@ public class LeetCode_567_Permutation_in_String {
     public static void main(String[] args) {
 
         LeetCode_567_Permutation_in_String client = new LeetCode_567_Permutation_in_String();
-        System.out.println(client.checkInclusion("abcdxabcde", "abcdeabcdx"));
+        System.out.println(client.checkInclusion("ab", "cdebacdx"));
 
     }
 

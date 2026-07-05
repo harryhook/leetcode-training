@@ -10,7 +10,8 @@ public class LeetCode_2_AddTwoNumbers {
     public static void main(String[] args) {
         ListNode head1 = getListOne(new ListNode(1));
         ListNode head2 = getListTwo(new ListNode(2));
-        handleAddTwoNumbers(head1, head2);
+        ListNode  newNode =   handleAddTwoNumbers(head1, head2);
+        System.out.printf("newNode: %d", newNode.val);
     }
 
     public static ListNode handleAddTwoNumbers(ListNode head1, ListNode head2) {

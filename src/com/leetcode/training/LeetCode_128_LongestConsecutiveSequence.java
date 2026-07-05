@@ -18,10 +18,11 @@ public class LeetCode_128_LongestConsecutiveSequence {
     }
     public int longestConsecutive(int[] nums) {
 
-        Set<Integer> numSet =  Arrays.stream(nums).boxed().collect(Collectors.toSet());
+        Set<Integer> numSet =  Arrays.stream(nums).boxed().collect(Collectors.toSet()); // 等价于 new HashSet<>(Arrays.asList(nums));
+
         int best = 0;
         for(Integer x: numSet) {
-            if(!numSet.contains(x-1)) {
+            if(!numSet.contains(x-1)) {  // 确保当前元素是序列的起始元素， 不然会重复计算， 1，2，3，4，5，-> 2，3，4，5
                 int y = x + 1;
                 while(numSet.contains(y)) {
                     y++;

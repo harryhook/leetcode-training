@@ -14,7 +14,7 @@ public class LeetCode_203_Remove_Linked_List_Elements {
         ListNode dummyHead = new ListNode(-1);
         dummyHead.next = head;
         ListNode curr = dummyHead;
-        while (curr != null && curr.next != null) {
+        while (curr.next != null) {
             if (curr.next.val == val) {
                 curr.next = curr.next.next;
             } else {
