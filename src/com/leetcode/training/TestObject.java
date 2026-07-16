@@ -1,6 +1,5 @@
 package com.leetcode.training;
 
-import sun.misc.Cleaner;
 
 import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;

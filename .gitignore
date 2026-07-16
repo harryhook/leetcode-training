@@ -6,3 +6,5 @@ target
 *.class
 out
 output
+misc.xml
+.omo*
