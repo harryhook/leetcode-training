@@ -14,4 +14,24 @@ public class LeetCode_617_MergeTrees {
         return node;
 
     }
+
+    public static void main(String[] args) {
+        TreeNode root1 = new TreeNode(1);
+        root1.left = new TreeNode(3);
+        root1.right = new TreeNode(2);
+        root1.left.left = new TreeNode(5);
+
+        TreeNode root2 = new TreeNode(2);
+        root2.left = new TreeNode(1);
+        root2.right = new TreeNode(3);
+        root2.right.right = new TreeNode(7);
+
+        TreeNode merged = new LeetCode_617_MergeTrees().mergeTrees(root1, root2);
+        System.out.println(merged.val);
+        System.out.println(merged.left.val);
+        System.out.println(merged.right.val);
+        System.out.println(merged.left.left.val);
+        System.out.println(merged.right.right.val);
+        System.out.println(merged.left.right.val);
+    }
 }
